@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.techtown.a1006_bibly">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera2"/>
 
     <application
         android:allowBackup="true"
@@ -20,15 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
-            android:authorities="org.techtown.a1006_bibly"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="org.techtown.a1006_bibly"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_path"
-                ></meta-data>
+                android:resource="@xml/file_path" />
         </provider>
 
         <activity android:name=".RecommendDetailActivity" />
@@ -37,7 +38,8 @@
         <activity android:name=".My_Rating" />
         <activity android:name=".My_Comment" />
         <activity android:name=".My_ReadDate" />
-        <activity android:name=".My_Profile"></activity>
+        <activity android:name=".My_Profile" />
+        <activity android:name=".RenameActivity"></activity>
     </application>
 
 </manifest>
