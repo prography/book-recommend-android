@@ -33,7 +33,6 @@
                 android:resource="@xml/file_path" />
         </provider>
 
-        <activity android:name=".RecommendDetailActivity" />
         <activity android:name=".BookDetailActivity" />
         <activity android:name=".My_AllBook" />
         <activity android:name=".My_Rating" />
@@ -41,7 +40,9 @@
         <activity android:name=".My_ReadDate" />
         <activity android:name=".My_Profile" />
         <activity android:name=".RenameActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".NewPostActivity"></activity>
     </application>
 
 </manifest>

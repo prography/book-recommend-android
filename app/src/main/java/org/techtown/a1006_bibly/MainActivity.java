@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
@@ -33,22 +32,24 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    MainFragment tab1 = new MainFragment();
+                    FeedFragment tab1 = new FeedFragment();
                     return tab1;
 
                 case 1:
-                    RatingFragment tab2 = new RatingFragment();
+                    RecommendFragment tab2 = new RecommendFragment();
                     return tab2;
 
                 case 2:
-                    TabFragment3 tab3 = new TabFragment3();
+                    MyPageFragment tab3 = new MyPageFragment();
                     return tab3;
-                case 3:
-                    MyPageFragment tab4 = new MyPageFragment();
-                    return tab4;
                 default:
                     return null;
             }
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
         }
 
         @Override
@@ -57,9 +58,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
     }
 
     Toolbar myToolbar;
+    PagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+
 
         // 추가된 소스, Toolbar를 생성한다.
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -79,13 +84,15 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("home"));
-        tabLayout.addTab(tabLayout.newTab().setText("rating"));
-        tabLayout.addTab(tabLayout.newTab().setText("friend"));
+        tabLayout.addTab(tabLayout.newTab().setText("recommend"));
         tabLayout.addTab(tabLayout.newTab().setText("mypage"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+
+
+
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -140,5 +147,11 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 }

@@ -57,6 +57,11 @@ public class RatingFragment extends Fragment implements OnClickListener {
 
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
+
 
 //    @Override
 //    public void onDestroyView() {

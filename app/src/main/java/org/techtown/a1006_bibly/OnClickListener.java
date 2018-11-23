@@ -9,4 +9,5 @@ public interface OnClickListener {
     public void onBookClick(BookInfo bookInfo);
     public void onRecommendDetailButtonClick(String type, String[] type_kinds);
 
+    void onClick(View v);
 }

@@ -57,7 +57,7 @@ public class BookDetailActivity_OtherBookRecommend_RecyclerviewAdapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //XML 가져오는 부분
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.main_fragment_recyclerview_item, parent, false);
+                .inflate(R.layout.activity_book_detail_recyclerview_item, parent, false);
         return new ViewHolder(view);
     }
 
