@@ -34,5 +34,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 
     implementation 'com.google.code.gson:gson:2.8.5'
-
+    implementation 'com.android.support:cardview-v7:26.1.0' //28.0.0인데 그냥 26.1.0으로 바꿔봄
 }

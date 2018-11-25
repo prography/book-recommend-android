@@ -28,16 +28,16 @@ public class FeedFragment_RecyclerviewAdapter
     }
 
     public class Myholder extends RecyclerView.ViewHolder {
-        @BindView(R.id.profile_img)
-        ImageView profileImg;
-        @BindView(R.id.profile_name)
-        TextView profileName;
-        @BindView(R.id.post_time)
-        TextView postTime;
-        @BindView(R.id.bulb)
-        ImageView bulb;
-        @BindView(R.id.book_img)
-        ImageView bookImg;
+//        @BindView(R.id.profile_img)
+//        ImageView profileImg;
+//        @BindView(R.id.profile_name)
+//        TextView profileName;
+//        @BindView(R.id.post_time)
+//        TextView postTime;
+//        @BindView(R.id.bulb)
+//        ImageView bulb;
+//        @BindView(R.id.book_img)
+//        ImageView bookImg;
         @BindView(R.id.post_title)
         TextView postTitle;
         @BindView(R.id.post_content)
@@ -53,7 +53,7 @@ public class FeedFragment_RecyclerviewAdapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //XML 가져오는 부분
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.feed_fragment_recyclerview_item, parent, false);
+                .inflate(R.layout.feed_fragment_cardview_item, parent, false);
         return new Myholder(view);
     }
 

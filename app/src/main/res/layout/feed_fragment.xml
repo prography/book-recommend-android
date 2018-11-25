@@ -32,6 +32,8 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+        app:reverseLayout="true"
+        app:stackFromEnd="true"
         android:id="@+id/home_fragment_post_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

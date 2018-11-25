@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -53,8 +55,9 @@ public class FeedFragment extends Fragment implements OnClickListener, View.OnCl
 
 
         Log.i("HIteshdata", "" + datamodel);
-        RecyclerView.LayoutManager reLayoutManager = new LinearLayoutManager(context);
-        recyclerView.setLayoutManager(reLayoutManager);
+        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+        //RecyclerView.LayoutManager reLayoutManager = new LinearLayoutManager(context);
+        //recyclerView.setLayoutManager(reLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycler);
 
