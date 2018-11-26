@@ -42,7 +42,8 @@
         <activity android:name=".RenameActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SignInActivity" />
-        <activity android:name=".NewPostActivity"></activity>
+        <activity android:name=".NewPostActivity" />
+        <activity android:name=".PostDetailActivity"></activity>
     </application>
 
 </manifest>

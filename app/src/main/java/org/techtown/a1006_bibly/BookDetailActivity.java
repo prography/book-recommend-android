@@ -190,4 +190,9 @@ public class BookDetailActivity extends AppCompatActivity implements View.OnClic
     public void onRecommendDetailButtonClick(String type, String[] type_kinds) {
 
     }
+
+    @Override
+    public void onPostClick(DataModel dataModel) {
+
+    }
 }

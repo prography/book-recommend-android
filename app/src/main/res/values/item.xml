@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>category1</item>
+        <item>category2</item>
+        <item>category3</item>
+        <item>category4</item>
+        <item>category5</item>
+    </string-array>
+</resources>

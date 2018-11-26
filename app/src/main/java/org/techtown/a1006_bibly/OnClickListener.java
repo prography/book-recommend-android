@@ -8,6 +8,7 @@ public interface OnClickListener {
     public void onButtonClick(RecyclerView recyclerView, String type, String btnKind, int btnNum);
     public void onBookClick(BookInfo bookInfo);
     public void onRecommendDetailButtonClick(String type, String[] type_kinds);
+    public void onPostClick(DataModel dataModel);
 
     void onClick(View v);
 }

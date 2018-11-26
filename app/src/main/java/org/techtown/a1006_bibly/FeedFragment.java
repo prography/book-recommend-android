@@ -55,11 +55,12 @@ public class FeedFragment extends Fragment implements OnClickListener, View.OnCl
 
 
         Log.i("HIteshdata", "" + datamodel);
-        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
-        //RecyclerView.LayoutManager reLayoutManager = new LinearLayoutManager(context);
-        //recyclerView.setLayoutManager(reLayoutManager);
+        //recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+        RecyclerView.LayoutManager reLayoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(reLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycler);
+        recycler.setClickListener(this);
 
         btnNewPost.setOnClickListener(this);
         textNewPost.setOnClickListener(this);
@@ -92,6 +93,13 @@ public class FeedFragment extends Fragment implements OnClickListener, View.OnCl
     @Override
     public void onRecommendDetailButtonClick(String type, String[] type_kinds) {
 
+    }
+
+    @Override
+    public void onPostClick(DataModel dataModel) {
+        Intent intent = new Intent(context, PostDetailActivity.class);
+        intent.putExtra("dataModel", dataModel);
+        startActivity(intent);
     }
 
     @Override

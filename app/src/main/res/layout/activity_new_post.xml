@@ -18,6 +18,25 @@
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="Category"/>
+
+       <Spinner
+           android:id="@+id/spinner_category"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+       </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="Title"/>
 
         <EditText
@@ -51,6 +70,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/spi_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="spinner"/>
 
 
 </LinearLayout>
