@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE = "mytable";
     public static final String POST_TITLE ="post_title";
     public static final String POST_CONTENT ="post_content";
-    public static final String CATE ="cate";
+    //public static final String CATE ="cate";
     String br;
 
     public DatabaseHelper(Context context) {
@@ -29,15 +29,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //br= "CREATE TABLE mytable(name TEXT,company TEXT,city TEXT,country TEXT);";
-         br = "CREATE TABLE IF NOT EXISTS " + TABLE
-                + "("
-                + POST_TITLE + " Text, "
-                + POST_CONTENT +  " Text, "
-                + CATE + " Text);";
-//        br = "CREATE TABLE " + TABLE
+//         br = "CREATE TABLE IF NOT EXISTS " + TABLE
 //                + "("
 //                + POST_TITLE + " Text, "
-//                + POST_CONTENT + " Text);";
+//                + POST_CONTENT +  " Text, "
+//                + CATE + " Text);";
+        br = "CREATE TABLE " + TABLE
+                + "("
+                + POST_TITLE + " Text, "
+                + POST_CONTENT + " Text);";
         db.execSQL(br);
     }
 
@@ -46,19 +46,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE+" ;");
     }
 
-    public void insertdata(String post_title, String post_content, String cate) {
+    public void insertdata(String post_title, String post_content/*, String cate*/) {
         //System.out.print("Hello "+br);
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
 
         contentValues.put(POST_TITLE, post_title);
         contentValues.put(POST_CONTENT, post_content);
-        contentValues.put(CATE, cate);
+        //contentValues.put(CATE, cate);
         db.insert(TABLE,null,contentValues);
     }
 
     public List<DataModel> getdata(){
-        List<DataModel> data=new ArrayList<>(); //new ArrayList<>() 원래 이거였음
+        List<DataModel> data=new ArrayList<DataModel>();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from "+TABLE+" ;", null);
         StringBuffer stringBuffer = new StringBuffer();
@@ -67,10 +67,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             dataModel= new DataModel();
             String post_title = cursor.getString(cursor.getColumnIndexOrThrow("post_title"));
             String post_content = cursor.getString(cursor.getColumnIndexOrThrow("post_content"));
-            String cate = cursor.getString(cursor.getColumnIndexOrThrow("cate"));
+            //String cate = cursor.getString(cursor.getColumnIndexOrThrow("cate"));
             dataModel.setPost_title(post_title);
             dataModel.setPost_content(post_content);
-            dataModel.setCate(cate);
+            //dataModel.setCate(cate);
             stringBuffer.append(dataModel);
             data.add(dataModel);
         }

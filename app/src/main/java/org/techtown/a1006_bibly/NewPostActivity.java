@@ -19,7 +19,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     DatabaseHelper databaseHelper;
     String post_title;
     String post_content;
-    //String category;
+    String category;
 
     @BindView(R.id.edit_title)
     EditText editTitle;
@@ -29,8 +29,8 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     Button btnPost;
     @BindView(R.id.spinner_category)
     Spinner spi;
-//    @BindView(R.id.spi_test)
-//    TextView spiTest;
+    @BindView(R.id.spi_test)
+    TextView spiTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(this, "please fill details", Toast.LENGTH_SHORT).show();
                 }
                 //category = "wow";
+//                databaseHelper.insertdata(post_title, post_content, category);
                 databaseHelper.insertdata(post_title, post_content);
                 editTitle.setText("");
                 editContent.setText("");

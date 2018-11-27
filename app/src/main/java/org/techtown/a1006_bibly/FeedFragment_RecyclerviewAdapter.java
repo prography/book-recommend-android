@@ -36,8 +36,8 @@ public class FeedFragment_RecyclerviewAdapter
         TextView postContent;
         @BindView(R.id.cardview)
         CardView cardview;
-//        @BindView(R.id.category)
-//        TextView category;
+        @BindView(R.id.category)
+        TextView category;
 
         public Myholder(View view) {
             super(view);
@@ -52,8 +52,8 @@ public class FeedFragment_RecyclerviewAdapter
         TextView postContent;
         @BindView(R.id.cardview)
         CardView cardview;
-//        @BindView(R.id.category)
-//        TextView category;
+        @BindView(R.id.category)
+        TextView category;
 
         public Myholder2(View view) {
             super(view);
@@ -91,26 +91,25 @@ public class FeedFragment_RecyclerviewAdapter
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final DataModel dataModel = dataModelArrayList.get(position);
-        TextView postTitle = null, postContent = null;
-        //, category = null;
+        TextView postTitle = null, postContent = null, category = null;
         CardView cardView = null;
 
         if (position % 2 * 2 == 0) {
             postTitle = ((Myholder) holder).postTitle;
             postContent = ((Myholder) holder).postContent;
-            //category = ((Myholder) holder).category;
+            category = ((Myholder) holder).category;
             cardView = ((Myholder) holder).cardview;
         }
         else if (position % 2 * 2 == 2) {
             postTitle = ((Myholder2) holder).postTitle;
             postContent = ((Myholder2) holder).postContent;
-            //category = ((Myholder2) holder).category;
+            category = ((Myholder2) holder).category;
             cardView = ((Myholder2) holder).cardview;
         }
 
         postTitle.setText(dataModel.getPost_title());
         postContent.setText(dataModel.getPost_content());
-        //category.setText(dataModel.getCate());
+        category.setText(dataModel.getCate());
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
