@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE = "mytable";
     public static final String POST_TITLE ="post_title";
     public static final String POST_CONTENT ="post_content";
-    //public static final String CATE ="cate";
+//    public static final String CATE ="cate";
     String br;
 
     public DatabaseHelper(Context context) {
@@ -53,8 +53,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         contentValues.put(POST_TITLE, post_title);
         contentValues.put(POST_CONTENT, post_content);
-        //contentValues.put(CATE, cate);
-        db.insert(TABLE,null,contentValues);
+//        contentValues.put(CATE, cate);
+        db.insert(TABLE, null, contentValues);
     }
 
     public List<DataModel> getdata(){
@@ -67,10 +67,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             dataModel= new DataModel();
             String post_title = cursor.getString(cursor.getColumnIndexOrThrow("post_title"));
             String post_content = cursor.getString(cursor.getColumnIndexOrThrow("post_content"));
-            //String cate = cursor.getString(cursor.getColumnIndexOrThrow("cate"));
+//            String cate = cursor.getString(cursor.getColumnIndexOrThrow("cate"));
             dataModel.setPost_title(post_title);
             dataModel.setPost_content(post_content);
-            //dataModel.setCate(cate);
+//            dataModel.setCate(cate);
             stringBuffer.append(dataModel);
             data.add(dataModel);
         }

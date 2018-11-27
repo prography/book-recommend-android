@@ -56,11 +56,11 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //각 항목 클릭시 포지션값을 토스트에 띄운다.
                 //Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-//                category = "";
-//                if (spi.getSelectedItemPosition() > 0) {
-//                    category = (String) spi.getAdapter().getItem(spi.getSelectedItemPosition());
-//                    spiTest.setText(category);
-//                }
+                category = "~";
+                if (spi.getSelectedItemPosition() > 0) {
+                    category = (String) spi.getAdapter().getItem(spi.getSelectedItemPosition());
+                    spiTest.setText(category);
+                }
                 //if (category != "")
                 //~~
             }
@@ -81,14 +81,16 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
                 post_content = editContent.getText().toString();
                 //Toast.makeText(MainActivity.this,name, Toast.LENGTH_SHORT).show();
 
-                while (post_title.isEmpty() || post_content.isEmpty()) {
-                    Toast.makeText(this, "please fill details", Toast.LENGTH_SHORT).show();
-                }
+//                if (post_title.isEmpty() || post_content.isEmpty()) {
+//                    Toast.makeText(this, "please fill details", Toast.LENGTH_SHORT).show();
+//                }
                 //category = "wow";
 //                databaseHelper.insertdata(post_title, post_content, category);
                 databaseHelper.insertdata(post_title, post_content);
                 editTitle.setText("");
                 editContent.setText("");
+//                String s = databaseHelper.getdata().get(0).getCate();
+//                Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

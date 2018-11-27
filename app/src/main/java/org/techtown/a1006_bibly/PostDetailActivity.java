@@ -32,7 +32,7 @@ public class PostDetailActivity extends AppCompatActivity implements View.OnClic
 
         this.postTitle.setText(dataModel.getPost_title());
         this.postContent.setText(dataModel.getPost_content());
-        //this.category.setText(dataModel.getCate());
+        this.category.setText(dataModel.getCate());
 
         back.setOnClickListener(this);
     }
