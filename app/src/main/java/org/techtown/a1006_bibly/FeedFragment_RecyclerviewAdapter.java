@@ -36,8 +36,8 @@ public class FeedFragment_RecyclerviewAdapter
         TextView postContent;
         @BindView(R.id.cardview)
         CardView cardview;
-        @BindView(R.id.category)
-        TextView category;
+//        @BindView(R.id.category)
+//        TextView category;
 
         public Myholder(View view) {
             super(view);
@@ -52,8 +52,8 @@ public class FeedFragment_RecyclerviewAdapter
         TextView postContent;
         @BindView(R.id.cardview)
         CardView cardview;
-        @BindView(R.id.category)
-        TextView category;
+//        @BindView(R.id.category)
+//        TextView category;
 
         public Myholder2(View view) {
             super(view);
@@ -91,7 +91,8 @@ public class FeedFragment_RecyclerviewAdapter
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final DataModel dataModel = dataModelArrayList.get(position);
-        TextView postTitle = null, postContent = null, category = null;
+        TextView postTitle = null, postContent = null;
+        //, category = null;
         CardView cardView = null;
 
         if (position % 2 * 2 == 0) {

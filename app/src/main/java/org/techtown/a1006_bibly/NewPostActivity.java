@@ -19,7 +19,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     DatabaseHelper databaseHelper;
     String post_title;
     String post_content;
-    String category;
+    //String category;
 
     @BindView(R.id.edit_title)
     EditText editTitle;
@@ -29,8 +29,8 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     Button btnPost;
     @BindView(R.id.spinner_category)
     Spinner spi;
-    @BindView(R.id.spi_test)
-    TextView spiTest;
+//    @BindView(R.id.spi_test)
+//    TextView spiTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +56,11 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //각 항목 클릭시 포지션값을 토스트에 띄운다.
                 //Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-                category = "";
-                if (spi.getSelectedItemPosition() > 0) {
-                    category = (String) spi.getAdapter().getItem(spi.getSelectedItemPosition());
-                    spiTest.setText(category);
-                }
+//                category = "";
+//                if (spi.getSelectedItemPosition() > 0) {
+//                    category = (String) spi.getAdapter().getItem(spi.getSelectedItemPosition());
+//                    spiTest.setText(category);
+//                }
                 //if (category != "")
                 //~~
             }

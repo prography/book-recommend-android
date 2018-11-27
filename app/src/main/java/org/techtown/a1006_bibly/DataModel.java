@@ -8,12 +8,12 @@ public class DataModel implements Serializable {
 
     public String post_title;
     public String post_content;
-    //public String cate;
+    public String cate;
 
     public DataModel() {
         setPost_title("null~");
         setPost_content("null~");
-        //setCate("null~");
+        setCate("null~");
     }
 
     public String getPost_title() {
@@ -32,11 +32,11 @@ public class DataModel implements Serializable {
         this.post_content = post_content;
     }
 
-//    public String getCate() {
-//        return cate;
-//    }
-//
-//    public void setCate(String cate) {
-//        this.cate = cate;
-//    }
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
+    }
 }

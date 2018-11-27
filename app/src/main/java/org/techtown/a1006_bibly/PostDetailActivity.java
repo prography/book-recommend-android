@@ -12,8 +12,8 @@ import butterknife.ButterKnife;
 
 public class PostDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.category)
-    TextView category;
+//    @BindView(R.id.category)
+//    TextView category;
     @BindView(R.id.post_title)
     TextView postTitle;
     @BindView(R.id.post_content)
