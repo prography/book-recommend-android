@@ -15,29 +15,29 @@ import static android.provider.MediaStore.Video.VideoColumns.CATEGORY;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE = "database.db";
-    public static final String TABLE = "mytable";
+    public static final String TABLE = "mytable"; //테이블명 바꾸기
     public static final String POST_TITLE ="post_title";
     public static final String POST_CONTENT ="post_content";
-//    public static final String CATE ="cate";
+    public static final String CATE ="cate";
     String br;
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE, null, 1);
+        super(context, DATABASE, null, 1); //버전 바꿔보기
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //br= "CREATE TABLE mytable(name TEXT,company TEXT,city TEXT,country TEXT);";
-//         br = "CREATE TABLE IF NOT EXISTS " + TABLE
-//                + "("
-//                + POST_TITLE + " Text, "
-//                + POST_CONTENT +  " Text, "
-//                + CATE + " Text);";
-        br = "CREATE TABLE " + TABLE
+//        br= "CREATE TABLE mytable(name TEXT,company TEXT,city TEXT,country TEXT);";
+         br = "CREATE TABLE IF NOT EXISTS " + TABLE //if not exists 삭제해보기
                 + "("
                 + POST_TITLE + " Text, "
-                + POST_CONTENT + " Text);";
+                + POST_CONTENT +  " Text, "
+                + CATE + " Text);";
+//        br = "CREATE TABLE " + TABLE
+//                + "("
+//                + POST_TITLE + " Text, "
+//                + POST_TITLEOST_CONTENT + " Text);";
         db.execSQL(br);
     }
 

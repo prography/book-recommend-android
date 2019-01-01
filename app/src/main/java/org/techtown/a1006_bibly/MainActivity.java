@@ -1,22 +1,28 @@
 package org.techtown.a1006_bibly;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
+
 
     private BackPressCloseHandler backPressCloseHandler;
 
@@ -58,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
     }
 
     Toolbar myToolbar;
@@ -70,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
 
 
 
@@ -87,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("recommend"));
         tabLayout.addTab(tabLayout.newTab().setText("mypage"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -115,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
         backPressCloseHandler = new BackPressCloseHandler(this);
     }
 
-    @Override public void onBackPressed() {
+    @Override
+    public void onBackPressed() {
         //super.onBackPressed();
         backPressCloseHandler.onBackPressed();
 
@@ -153,5 +158,12 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //앱이 꺼질 때 떠야하는데,,,
+        Toast.makeText(this, "bye", Toast.LENGTH_SHORT).show();
     }
 }

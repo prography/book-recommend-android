@@ -43,7 +43,8 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".NewPostActivity" />
-        <activity android:name=".PostDetailActivity"></activity>
+        <activity android:name=".PostDetailActivity" />
+        <activity android:name=".Main10Activity"></activity>
     </application>
 
 </manifest>

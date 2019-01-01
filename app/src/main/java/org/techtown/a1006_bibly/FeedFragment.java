@@ -57,6 +57,8 @@ public class FeedFragment extends Fragment implements OnClickListener, View.OnCl
         Log.i("HIteshdata", "" + datamodel);
         //recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
         RecyclerView.LayoutManager reLayoutManager = new LinearLayoutManager(context);
+        //recyclerview reverse
+        ((LinearLayoutManager) reLayoutManager).setReverseLayout(true);
         recyclerView.setLayoutManager(reLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recycler);
